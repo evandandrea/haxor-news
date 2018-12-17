@@ -1,0 +1,30 @@
+name: haxor-news
+base: core18
+version: git
+summary: "Browse Hacker News like a haxor: A Hacker News command line interface"
+description: |
+  Haxor-news brings Hacker News to the terminal, allowing you to view/filter
+  the following without leaving your command line:
+  
+  * Posts
+  * Post Comments
+  * Post Linked Web Content
+  * Monthly Hiring and Freelancers Posts
+  * User Info
+  * Onions
+
+grade: stable
+confinement: strict
+
+parts:
+  haxor-news:
+    plugin: python
+    source: .
+
+apps:
+  haxor-news:
+    command: haxor-news
+    plugs: [network]
+    environment:
+      LC_ALL: C.UTF-8
+      LANG: C.UTF-8
